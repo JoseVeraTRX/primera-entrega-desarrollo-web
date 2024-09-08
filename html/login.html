@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Login</title>
+    <!--Dado que realice una mejor estructura de la página, cambie el link de styles-->
+    <link rel="stylesheet" href="/css/styles.css">
+   
+</head>
+<body>
+    <div class="login-container">
+
+        <h2 class="letra" style="font-family:'Audiowide', sans-serif;">INICIAR SESION</h2>
+        
+        <!--Cambio el logo viejo por el nuevo y usando center, lo justifico en medio del formulario-->
+        <center> <img src="/images/logoFastWheels.png" alt="FastWheels" width="50%"> </center>
+        
+        <!--Formulario de registro-->
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Nombre de usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+        <p>¿No tienes una cuenta? <a href="/html/registro.html">Regístrate aquí</a></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === "" || password === "") {
+                alert("Por favor, completa todos los campos.");
+            } else {
+                alert("Inicio de sesión exitoso");
+                window.location.href = 'catalogo.html';
+            }
+        });
+    </script>
+</body>
+</html>
